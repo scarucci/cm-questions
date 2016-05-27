@@ -9,14 +9,14 @@ def getTime():
     r = requests.get('http://countdown.tfl.gov.uk/stopBoard/52222') #52222 is the unique ID of London Bridge stop (M)
     json_result = r.json() # obtain json file from stopboard
     stops = json_result['arrivals']
-    M_stop = []
+    M_stop = [] # arraying results
 
     # search within the json file for destinations
 
     for x in stops:
         """
 
-below, it is also possible to specify the direction by putting x[destination] == 'destination_name'
+below, it is also possible to specify the direction by specifying x[destination] == 'destination_name'
 
         """
         if x['isRealTime'] == True:
